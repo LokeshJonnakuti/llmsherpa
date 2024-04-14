@@ -284,7 +284,7 @@ class ListItem(Block):
         recurse: bool
             If True, then the html of the children's children are also included
         """
-        html_str = f"<li>"
+        html_str = "<li>"
         html_str = html_str + "\n".join(self.sentences)
         if include_children:
             if len(self.children) > 0:
@@ -292,7 +292,7 @@ class ListItem(Block):
                 for child in self.children:
                     html_str = html_str + child.to_html(include_children=recurse, recurse=recurse)
                 html_str += "</ul>"        
-        html_str = html_str + f"</li>"
+        html_str = html_str + "</li>"
         return html_str
 
     
